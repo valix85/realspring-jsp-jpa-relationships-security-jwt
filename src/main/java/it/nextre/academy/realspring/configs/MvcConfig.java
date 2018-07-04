@@ -2,17 +2,16 @@ package it.nextre.academy.realspring.configs;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
+@ComponentScan("it.nextre.academy.realspring")
 public class MvcConfig extends WebMvcConfigurerAdapter {
 
     @Value("${spring.mvc.view.prefix}")
@@ -40,5 +39,20 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 
+
+
+    //rotte statiche da mettere in sicurezza
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        //registry.addViewController("/").setViewName("index");
+        registry.addViewController("/login").setViewName("login");
+    }
+
+    /*
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+    */
 
 }//end class

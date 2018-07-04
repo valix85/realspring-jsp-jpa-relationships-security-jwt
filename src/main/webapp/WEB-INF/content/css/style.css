@@ -1,5 +1,17 @@
-html, body {margin:0; padding:0;}
-body {background: cornsilk; color: #444;}
+html, body {
+    margin:0; padding:0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f8ffe8+19,e3f5ab+44,b7df2d+100 */
+    background: #f8ffe8; /* Old browsers */
+    background: -moz-linear-gradient(top, #f8ffe8 19%, #e3f5ab 44%, #b7df2d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f8ffe8 19%,#e3f5ab 44%,#b7df2d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f8ffe8 19%,#e3f5ab 44%,#b7df2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8ffe8', endColorstr='#b7df2d',GradientType=0 ); /* IE6-9 */
+    min-height: 100%;
+    height: 100%;
+}
+body {
+    color: #444;
+}
 
 h1 {
     font-family: "Lucida Console", Arial;

@@ -38,20 +38,19 @@
                     <h3 class="panel-title">Login</h3>
                 </div>
                 <div class="panel-body">
-                    <form accept-charset="UTF-8" role="form">
+                    <form accept-charset="UTF-8" role="form" method="post" action="/login" >
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="text">
+                                <input class="form-control" placeholder="Username" name="user" type="text">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Senha" name="password" type="password" value="">
+                                <input class="form-control" placeholder="Password" name="pwd" type="password" value="">
                             </div>
 
                             <input class="btn btn-lg btn-success btn-block mybtn-action" type="submit" value="LOG IN">
                         </fieldset>
                         <div class="recsenha">
-                            <label>
-                                <a href="">Forgot Password?</a>                                </label>
+                            <label><a href="">Forgot Password?</a></label>
                         </div>
                     </form>
                 </div>
