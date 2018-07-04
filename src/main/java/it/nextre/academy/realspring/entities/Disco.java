@@ -1,6 +1,7 @@
 package it.nextre.academy.realspring.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Disco {
     private String barcode;
 
     //più dischi possono contenere lo stesso film
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name="film_id")
     private Film film;

@@ -1,5 +1,8 @@
 package it.nextre.academy.realspring.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.*;
 
 
@@ -30,6 +33,7 @@ public class Coupon {
     @Digits(integer = 3, fraction = 2)
     private BigDecimal sold;
 
+    @JsonBackReference //il back blocca la lettura di loop
     @OneToOne(mappedBy = "coupon")
     private Film film;
 

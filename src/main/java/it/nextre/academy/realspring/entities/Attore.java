@@ -1,6 +1,7 @@
 package it.nextre.academy.realspring.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,8 @@ public class Attore {
     private String cognome;
     private String sesso;
 
+
+    @JsonManagedReference
     @ManyToMany
     //tabella di mezzo
     //joinColumns identifica le colonne di questa entità che parteciperanno alla relazione, in questo caso solo l'id

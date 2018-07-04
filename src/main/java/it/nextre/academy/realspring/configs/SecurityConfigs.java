@@ -3,6 +3,7 @@ package it.nextre.academy.realspring.configs;
 import it.nextre.academy.realspring.filters.JwtAuthenticationTokenFilter;
 import it.nextre.academy.realspring.security.JwtAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -23,6 +24,10 @@ import java.util.Arrays;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfigs extends WebSecurityConfigurerAdapter {
+
+
+    @Value("${jwt.header}")
+    private String tokenHeader;
 
 
 
@@ -47,6 +52,7 @@ public class SecurityConfigs extends WebSecurityConfigurerAdapter {
         configuration.setAllowedMethods(Arrays.asList("POST, PUT, GET, OPTIONS, DELETE"));
         configuration.addAllowedHeader("*");
         configuration.addAllowedMethod("*");
+        configuration.addExposedHeader(tokenHeader);
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
